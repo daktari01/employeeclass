@@ -2,6 +2,7 @@
 
 
 class Employee:
+    """Practice class"""
 
     num_of_emps = 0
     raise_amount = 1.04
@@ -15,9 +16,11 @@ class Employee:
         Employee.num_of_emps += 1
 
     def fullname(self):
+        """Find full name fomat"""
         return '{} {}'.format(self.first, self.last)
 
     def apply_raise(self):
+        """Find raise of salary"""
         self.pay = int(self.pay * self.raise_amount)
 
     @classmethod
@@ -36,6 +39,10 @@ class Employee:
             return False
         return True
 
+
+class Developer(Employee):
+    """Class Developer inheriting from Employee class"""
+    pass
 
 dev_1 = Employee('Corey', 'Schafer', 50000)
 dev_2 = Employee('Test', 'User', 60000)
@@ -57,8 +64,3 @@ new_emp_1 = Employee.from_string(emp_str_1)
 
 print(new_emp_1.email)
 print(new_emp_1.pay)
-
-
-
-
-
