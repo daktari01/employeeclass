@@ -33,16 +33,17 @@ class Employee:
         These two methods allow us to change how our objects are printed
         and dispalyed'''
         return '{} - {}'.format(self.fullname(), self.email)
+
+    def __add__(self, other):
+        '''When we add two employees together, it will give us combined pay'''
+        return self.pay + other.pay
+
+    def __len__(self):
+        '''Returns number of characters in employee,s name'''
+        return len(self.fullname())
         
 emp_1 = Employee('Corey', 'Schafer', 50000)
 emp_2 = Employee('Test', 'User', 60000)
 
-print(emp_1)
-
-repr(emp_1)
-str(emp_1)
-
-'''Dunder methods can also be used to perform arithmetic calculation'''
-print(1 + 2)
-print(int.__add__(1,2))
-print(str.__add__('a', 'b')) #string __add__ concatenates the strings
+print(emp_1 + emp_2)
+print(len(emp_1))
