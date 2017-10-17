@@ -27,7 +27,7 @@ class Employee:
     def set_raise_amt(cls, amount):
         cls.raise_amount = amount
 
-     #Alternative class constructor
+    #Alternative class constructor
     @classmethod
     def from_string(cls, emp_str):
         first, last, pay = emp_str.split('-')
@@ -56,7 +56,7 @@ class Manager(Employee):
         '''Redefining the Employer init method to 
         include the employees managed by manager'''
         super().__init__(first, last, pay)
-        if employees = None:
+        if employees == None:
             self.employees = []
         else:
             self.employees = employees
@@ -81,6 +81,13 @@ dev_1 = Developer('Corey', 'Schafer', 50000, 'Python')
 dev_2 = Developer('Test', 'User', 60000, 'JavaScript')
 
 mgr_1 = Manager('Sue', 'Smith', 90000, [dev_1])
+print(mgr_1.email)
+mgr_1.add_emp(dev_2)
+mgr_1.remove_emp(dev_1)
+mgr_1.print_emps()
+
+print(isinstance(mgr_1, Manager))
+print(issubclass(Developer, Employee))
 
 '''print(dev_1.email)
 print(dev_2.email)
